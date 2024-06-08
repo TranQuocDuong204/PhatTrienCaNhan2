@@ -38,7 +38,7 @@ export class BlogComponent {
         'https://media.baodautu.vn/Images/giaminh/2018/02/10/cau-rong-5-e1505463926776.jpg',
       ],
       image:
-        'https://static.vinwonders.com/2022/06/rMPh6R3O-cong-vien-bien-dong-5.jpg',
+      'https://haycafe.vn/wp-content/uploads/2022/01/Hinh-anh-cau-Rong-dep-tuyet-voi.jpg',
       date: '26/05/2024',
     },
     {
