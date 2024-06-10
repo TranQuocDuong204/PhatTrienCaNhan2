@@ -24,19 +24,16 @@
 
                 <div class="pt-5">
 
-                    <ul class="comment-list" *ngFor="let img of oneItem.imageURLs">
+                    <ul class="comment-list" *ngFor="let item of oneItem.imageURLs">
                         <li class="comment" style="display: flex; flex-direction: column;">
                             <div class="">
-                                <img src={{img}} alt="Image" style="width: 800px; height: 400px;">
+                                <img src={{item.img}} alt="Image" style="width: 800px; height: 400px;">
                             </div>
                             <div class="comment-body">
 
                                 <div class="meta">{{oneItem.time}}</div>
-                                <p>When she reached the first hills of the Italic Mountains, she had a last view back on
-                                    the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the
-                                    subline of her own road, the Line Lane. Pityful a rethoric question ran over her
-                                    cheek, then she continued her way.</p>
-                                <p><a href="#" class="reply">Reply</a></p>
+                                <p>{{item.content}}</p>
+
                             </div>
                         </li>
                         <!-- 
