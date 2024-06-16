@@ -2517,3 +2517,12 @@ h5,
   width: 500;
   height: 300px;
 }
+
+.searchBlog {
+  width: 500px;
+  margin: auto;
+  display: flex;
+  gap: 15px;
+  outline: #0d6efd;
+  
+}

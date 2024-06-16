@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-blog-detail',
   templateUrl: './blog-detail.component.html',
@@ -8,10 +10,13 @@ import { ActivatedRoute } from '@angular/router';
 export class BlogDetailComponent {
   public blogsId: number = 0;
   oneItem: any = {};
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    public auth: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
-    let data;
     let id = parseInt(this.route.snapshot.paramMap.get('id') ?? '0');
     this.blogsId = id;
 

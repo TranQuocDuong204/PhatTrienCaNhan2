@@ -37,10 +37,21 @@
             <ul class="site-menu main-menu js-clone-nav ml-auto ">
               <li class="active"><a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page"
                   class="nav-link">Trang chủ</a></li>
-              <li><a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page"
-                  class="nav-link">Giới Thiệu</a></li>
+              <li><a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page" class="nav-link">Giới
+                  Thiệu</a></li>
 
               <li><a routerLink="/blog" routerLinkActive="active" ariaCurrentWhenActive="page" class="nav-link">Blog</a>
+              </li>
+
+              <li *ngIf="!authService.isLoggedIn()"><a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page"
+                  class="nav-link">Login</a>
+              </li>
+              <li *ngIf="authService.isLoggedIn()"><a (click)="onLogout()" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page"
+                class="nav-link">Logout</a>
+            </li>
+
+              <li *ngIf="!authService.isLoggedIn()"><a routerLink="/signup" routerLinkActive="active" ariaCurrentWhenActive="page"
+                  class="nav-link">Signup</a>
               </li>
             </ul>
           </nav>
@@ -61,22 +72,28 @@
           <h2 class="footer-heading mb-3">Instagram</h2>
           <div class="row">
             <div class="col-4 gal_col">
-              <a href="#"><img src="https://logos-world.net/wp-content/uploads/2020/06/Instagram-Logo.png" alt="Image" class="img-fluid"></a>
+              <a href="#"><img src="https://logos-world.net/wp-content/uploads/2020/06/Instagram-Logo.png" alt="Image"
+                  class="img-fluid"></a>
             </div>
             <div class="col-4 gal_col">
-              <a href="#"><img src="https://logos-world.net/wp-content/uploads/2020/06/Instagram-Logo.png" alt="Image" class="img-fluid"></a>
+              <a href="#"><img src="https://logos-world.net/wp-content/uploads/2020/06/Instagram-Logo.png" alt="Image"
+                  class="img-fluid"></a>
             </div>
             <div class="col-4 gal_col">
-              <a href="#"><img src="https://logos-world.net/wp-content/uploads/2020/06/Instagram-Logo.png" alt="Image" class="img-fluid"></a>
+              <a href="#"><img src="https://logos-world.net/wp-content/uploads/2020/06/Instagram-Logo.png" alt="Image"
+                  class="img-fluid"></a>
             </div>
             <div class="col-4 gal_col">
-              <a href="#"><img src="https://logos-world.net/wp-content/uploads/2020/06/Instagram-Logo.png" alt="Image" class="img-fluid"></a>
+              <a href="#"><img src="https://logos-world.net/wp-content/uploads/2020/06/Instagram-Logo.png" alt="Image"
+                  class="img-fluid"></a>
             </div>
             <div class="col-4 gal_col">
-              <a href="#"><img src="https://logos-world.net/wp-content/uploads/2020/06/Instagram-Logo.png" alt="Image" class="img-fluid"></a>
+              <a href="#"><img src="https://logos-world.net/wp-content/uploads/2020/06/Instagram-Logo.png" alt="Image"
+                  class="img-fluid"></a>
             </div>
             <div class="col-4 gal_col">
-              <a href="#"><img src="https://logos-world.net/wp-content/uploads/2020/06/Instagram-Logo.png" alt="Image" class="img-fluid"></a>
+              <a href="#"><img src="https://logos-world.net/wp-content/uploads/2020/06/Instagram-Logo.png" alt="Image"
+                  class="img-fluid"></a>
             </div>
           </div>
         </div>
@@ -94,14 +111,14 @@
             </div>
             <div class="col-lg-6">
               <h2 class="footer-heading mb-4">Liên Hệ Ngay!</h2>
-              
+
               <form action="#" class="d-flex" class="subscribe d-flex gap-3">
                 <input type="text" class="form-control mr-3" placeholder="Email">
                 <input type="submit" value="Gửi" class="btn btn-primary">
               </form>
             </div>
 
-          </div>  
+          </div>
         </div>
       </div>
       <div class="row pt-5 mt-5 text-center">
@@ -110,7 +127,7 @@
             <p>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
               Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> All rights reserved | Sản phẩm đến từ 
+              <script>document.write(new Date().getFullYear());</script> All rights reserved | Sản phẩm đến từ
               with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com"
                 target="_blank">Team XO</a>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->

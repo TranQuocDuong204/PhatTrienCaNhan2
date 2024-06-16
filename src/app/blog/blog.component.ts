@@ -1,5 +1,7 @@
+import { Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -38,7 +40,7 @@ export class BlogComponent {
         'https://media.baodautu.vn/Images/giaminh/2018/02/10/cau-rong-5-e1505463926776.jpg',
       ],
       image:
-      'https://haycafe.vn/wp-content/uploads/2022/01/Hinh-anh-cau-Rong-dep-tuyet-voi.jpg',
+        'https://haycafe.vn/wp-content/uploads/2022/01/Hinh-anh-cau-Rong-dep-tuyet-voi.jpg',
       date: '26/05/2024',
     },
     {
@@ -178,9 +180,22 @@ export class BlogComponent {
     },
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, public auth: AuthService) {}
 
   onSelect(blogs: any) {
     this.router.navigate(['/blog', blogs.id]);
+  }
+  valueOnChange: any = '';
+  handleChange(event: any) {
+    this.valueOnChange = event.target.value;
+  }
+  searchValueDisplay: any = this.blogs;
+
+  handleClickGetValue() {
+    const itemSearch = this.valueOnChange.toLowerCase();
+    this.searchValueDisplay = this.blogs.filter((item) =>
+      item.name.toLowerCase().includes(itemSearch)
+    );  
+   
   }
 }
